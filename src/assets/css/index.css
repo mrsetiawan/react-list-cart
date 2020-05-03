@@ -1,0 +1,39 @@
+@import './config.css';
+@import './spacing.css';
+@import './responsive.css';
+
+.container {
+  padding-right: var(--spacing-15);
+  padding-left: var(--spacing-15);
+  margin-right: var(--auto);
+  margin-left: var(--auto);
+}
+
+.border-1px-gainsboro {
+  border: var(--b1-gainsboro);
+}
+
+.right-content {
+  background: var(--gainsboro);
+  min-height: 100vh;
+  border-right: var(--b1-gainsboro);
+}
+
+.card-list {
+  background:var(--white);
+  padding: var(--spacing-10);
+}
+
+.bb-1 {
+  border-bottom: var(--b1-gainsboro);
+}
+
+.ant-typography {
+  margin-bottom: 0 !important;
+} 
+
+.fixed-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

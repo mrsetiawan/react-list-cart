@@ -1,0 +1,24 @@
+:root {
+  /* color */
+  --white: white;
+  --black: black;
+  --gainsboro: #DCDCDC;
+  --dogerblue: #1E90FF;
+  /* display */
+  --d-flex: flex;
+  --d-block: block;
+  --d-none: none;
+  --hidden: hidden;
+  /* position */
+  --center: center;
+  /* spacing */
+  --auto: auto;
+  --spacing-15: 15px;
+  --spacing-10: 10px;
+  --spacing-5: 5px;
+  --first-load: 1s ease-in-out 0s 1 firstLoad;
+  /* border */
+  --b1-black: 1px solid var(--black);
+  --b1-gainsboro: 1px solid var(--gainsboro);
+
+}

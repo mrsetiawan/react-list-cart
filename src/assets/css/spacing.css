@@ -1,0 +1,13 @@
+@import './config.css';
+
+.mb-15 {
+  margin-bottom: var(--spacing-15);
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.pr-10 {
+  padding-right: var(--spacing-10);
+}
