@@ -3,8 +3,9 @@ import {
   Row, Col, Typography, Avatar, List, Card
 } from 'antd';
 import { UserOutlined, AreaChartOutlined } from '@ant-design/icons';
+import Paragraph from './Paragraph';
 
-const { Title, Text } = Typography;
+const { Title } = Typography;
 
 class Main extends Component {
 
@@ -27,7 +28,9 @@ class Main extends Component {
                 <Card.Grid style={gridStyle} key={idx}>
                   <AreaChartOutlined style={{ fontSize: '55px' }} />
                   <br />
-                  <Text>Tes</Text>
+                  <Paragraph>Tes</Paragraph>
+                  {/* <abbr title="muhamad rahmat setiawan">nama</abbr> */}
+
                 </Card.Grid>
               ))}
             </Row>
