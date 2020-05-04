@@ -10,6 +10,7 @@ const { Title } = Typography;
 class Main extends Component {
 
   render() {
+
     const gridStyle = {
       width: '33.3%',
       textAlign: 'center',
@@ -28,7 +29,7 @@ class Main extends Component {
                 <Card.Grid style={gridStyle} key={idx}>
                   <AreaChartOutlined style={{ fontSize: '55px' }} />
                   <br />
-                  <Paragraph>Tes</Paragraph>
+                  <Paragraph description="tes" />
                   {/* <abbr title="muhamad rahmat setiawan">nama</abbr> */}
 
                 </Card.Grid>
