@@ -2,7 +2,9 @@ import React from 'react';
 
 function Price(props) {
   return (
-    <div>{props.children}</div>
+    <div>
+      {props.children}
+    </div>
   );
 }
 

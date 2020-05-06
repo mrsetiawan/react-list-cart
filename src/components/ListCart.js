@@ -1,28 +1,44 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { List, Avatar } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import { List } from 'antd';
 import Price from './Price';
 import AvatarProduct from './AvatarProduct';
 
-function ListCart({ data, description }) {
+function ListCart({ data, cart,total }) {
   return (
     // eslint-disable-next-line react/jsx-filename-extension
-    <List
-      itemLayout="horizontal"
-      dataSource={data}
-      renderItem={(item) => (
-        <List.Item>
-          {description
-            // eslint-disable-next-line react/jsx-wrap-multilines
-            ? <List.Item.Meta
+    cart ? (
+      <List
+        itemLayout="horizontal"
+        dataSource={data}
+        renderItem={(item) => (
+          <List.Item>
+            <List.Item.Meta
               avatar={<AvatarProduct />}
               title={item.title}
-              description={description}
-            /> : <List.Item.Meta title={item.title} />}
-          <Price>Content</Price>
-        </List.Item>
-      )}
-    />
+              description={item.product_name}
+            />
+            <Price>100</Price>
+          </List.Item>
+        )}
+      />
+    )
+      :
+      // eslint-disable-next-line react/jsx-wrap-multilines
+      <List
+        itemLayout="horizontal"
+        dataSource={data}
+        renderItem={(item) => (
+          <List.Item>
+            <List.Item.Meta
+              avatar={<AvatarProduct />}
+              title={item.product_name}
+              description={item.product_name}
+            />
+            <Price>${item.product_price}</Price>
+          </List.Item>
+        )}
+      />
   );
 }
 

@@ -1,28 +1,34 @@
 import React from 'react';
 import { Card } from 'antd';
-import { AreaChartOutlined } from '@ant-design/icons';
-import Paragraph from './Paragraph';
+import CardDesc from './CardDesc';
 
-function CardList({ data, description }) {
+function CardProduct({ data }) {
   const gridStyle = {
     width: '33.3%',
-    textAlign: 'center',
     cursor: 'pointer',
     padding: '28px 5px 28px 5px'
+  };
+
+  const imageStyle = {
+    width: '100%',
+    height: '200px',
+    overflow: 'hidden',
+    backgroundPosition: '50% 50%',
+    objectFit: 'cover'
   };
 
   return (
     // eslint-disable-next-line react/jsx-filename-extension
     <>
-      {data.map((idx) => (
-        <Card.Grid style={gridStyle} key={idx}>
-          <AreaChartOutlined style={{ fontSize: '55px' }} />
+      {data.product.map((res) => (
+        <Card.Grid style={gridStyle} key={res.id}>
+          <img src={res.product_image} alt={res.product_name} style={imageStyle} />
           <br />
-          <Paragraph description={description} />
+          <CardDesc description={res.product_name} price={res.product_price} />
         </Card.Grid>
       ))}
     </>
   );
 }
 
-export default CardList;
+export default CardProduct;

@@ -10,17 +10,15 @@ const { Title } = Typography;
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Main extends Component {
-
   render() {
-    console.log(this.props.product)
-    const qty = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, , 15, 16, 17, 18, 19, 20];
+    const priceInCart = this.props.product.product.filter((num) => num.product_price >= 800);
 
     return (
       <div className="container">
         <Row>
           <Col span={14} className="left-content border-1px-gainsboro">
             <Row>
-              <CardProduct data={qty} description="tes description" />
+              <CardProduct data={this.props.product} />
             </Row>
           </Col>
           <Col span={10} className="right-content">
@@ -28,15 +26,14 @@ class Main extends Component {
               <Col span={24} className="card-list mb-15">
                 <ListCart
                   data={[{ title: 'Ant Design Title 1' }]}
-                  description="desc 1"
+                  cart="cart"
                 />
               </Col>
               <Col span={24} className="mb-15">
                 <Row>
                   <Col span={24} className="card-list mb-5">
                     <ListCart
-                      data={[{ title: 'Ant Design Title 1' }, { title: 'Ant Design Title 1' }, { title: 'Ant Design Title 1' }, { title: 'Ant Design Title 1' }]}
-                      description="desc 2"
+                      data={priceInCart}
                     />
                   </Col>
                 </Row>
@@ -47,11 +44,13 @@ class Main extends Component {
               <Col span={24} className="card-list mb-15">
                 <ListCart
                   data={[{ title: 'Ant Design Title 1' }, { title: 'Ant Design Title 1' }, { title: 'Ant Design Title 1' }, { title: 'Ant Design Title 1' }]}
+                  cart="cart"
                 />
               </Col>
               <Col span={24} className="card-list fixed-bottom">
                 <ListCart
                   data={[{ title: 'Total' }]}
+                  total="total"
                 />
               </Col>
             </Row>
@@ -62,10 +61,10 @@ class Main extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   product: state.product
-})
+});
 
-const mapDispatchToProps = dispatch => dispatch(getProductList)
+const mapDispatchToProps = (dispatch) => dispatch(getProductList);
 
-export default connect(mapStateToProps,mapDispatchToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

@@ -15,7 +15,9 @@
 
 .right-content {
   background: var(--gainsboro);
-  min-height: 100vh;
+  max-height: 100vh;
+  position: sticky;
+  top: 0;
   border-right: var(--b1-gainsboro);
 }
 
@@ -36,4 +38,17 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+.card-desc {
+  display: flex;
+  justify-content: space-between;
+  padding-left:var(--spacing-15);
+  padding-right:var(--spacing-15);
+  align-items: center;
+  padding: 15px;
+}  
+
+.ant-card-grid {
+  padding: 28px 5px 5px 5px !important;
 }
