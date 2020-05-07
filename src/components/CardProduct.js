@@ -6,11 +6,6 @@ import { Card } from 'antd';
 import CardDesc from './CardDesc';
 
 const CardProduct = ({ data, handleClickDetail }) => {
-  const gridStyle = {
-    width: '33.3%',
-    cursor: 'pointer',
-    padding: '28px 5px 28px 5px'
-  };
 
   const imageStyle = {
     width: '100%',
@@ -25,7 +20,7 @@ const CardProduct = ({ data, handleClickDetail }) => {
   return (
     <>
       {data.product.map((res) => (
-        <Card.Grid style={gridStyle} key={res.id} onClick={() => handleClick(res.id)}>
+        <Card.Grid key={res.id} onClick={() => handleClick(res.id)}>
           <img src={res.product_image} alt={res.product_name} style={imageStyle} />
           <br />
           <CardDesc description={res.product_name} price={res.product_price} />

@@ -49,6 +49,12 @@
   padding: 15px;
 }  
 
+/* .card-list {
+  width: 33.3%;
+  cursor: pointer;
+  padding: 28px 5px 28px 5px
+} */
+
 .ant-card-grid {
   padding: 28px 5px 5px 5px !important;
 }

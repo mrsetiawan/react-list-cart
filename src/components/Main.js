@@ -19,18 +19,18 @@ class Main extends Component {
 
     return (
       <div className="container">
-        <Row>
-          <Col span={14} className="left-content border-1px-gainsboro">
-            <Row>
+        <Row gutter={{ xs: 15}}>
+          <Col lg={14} sm={12} xs={24} className="left-content border-1px-gainsboro">
+            <Row> 
               <CardProduct
                 data={this.props.product}
                 handleClickDetail={this.handleClickDetail}
               />
             </Row>
           </Col>
-          <Col span={10} className="right-content">
+          <Col lg={10} sm={12} xs={24} className="right-content">
             <Row>
-              <Col span={24} className="card-list mb-15">
+              <Col lg={24} sm={12} xs={24} className="card-list mb-15">
                 <ListCart
                   data={[{ title: 'Ant Design Title 1' }]}
                   cart="cart"
