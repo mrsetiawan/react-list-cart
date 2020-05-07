@@ -10,7 +10,8 @@ import image9 from '../../assets/img/image9.jpg';
 import image10 from '../../assets/img/image10.jpg';
 
 const initialState = {
-  product: []
+  product: [],
+  product_cart: []
 };
 
 const productListReducers = (state = initialState, action) => {
@@ -75,8 +76,11 @@ const productListReducers = (state = initialState, action) => {
     };
 
     return newState;
+  } if (action.type === 'GET_PRODUCT_LIST_BY_ID') {
+
+  } else {
+    return state;
   }
-  return state;
 };
 
 export default productListReducers;

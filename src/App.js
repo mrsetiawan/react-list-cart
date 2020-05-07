@@ -8,10 +8,10 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      // eslint-disable-next-line react/jsx-filename-extension
-        <Switch>
-          <Route path="/" component={Main} />
-        </Switch>
+    // eslint-disable-next-line react/jsx-filename-extension
+      <Switch>
+        <Route path="/" component={Main} />
+      </Switch>
     );
   }
 }

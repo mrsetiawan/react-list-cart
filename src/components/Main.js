@@ -5,11 +5,15 @@ import { Row, Col, Typography } from 'antd';
 import CardProduct from './CardProduct';
 import ListCart from './ListCart';
 import { getProductList } from '../config/actions/getProductList';
+import { getProductListById } from '../config/actions/getProductListById';
 
 const { Title } = Typography;
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Main extends Component {
+
+  handleClickDetail = (id) => alert(id);
+
   render() {
     const priceInCart = this.props.product.product.filter((num) => num.product_price >= 800);
 
@@ -18,7 +22,10 @@ class Main extends Component {
         <Row>
           <Col span={14} className="left-content border-1px-gainsboro">
             <Row>
-              <CardProduct data={this.props.product} />
+              <CardProduct
+                data={this.props.product}
+                handleClickDetail={this.handleClickDetail}
+              />
             </Row>
           </Col>
           <Col span={10} className="right-content">
@@ -43,7 +50,7 @@ class Main extends Component {
               </Col>
               <Col span={24} className="card-list mb-15">
                 <ListCart
-                  data={[{ title: 'Ant Design Title 1' }, { title: 'Ant Design Title 1' }, { title: 'Ant Design Title 1' }, { title: 'Ant Design Title 1' }]}
+                  data={[{ title: 'Ant Design Title 1' }]}
                   cart="cart"
                 />
               </Col>
@@ -65,6 +72,8 @@ const mapStateToProps = (state) => ({
   product: state.product
 });
 
-const mapDispatchToProps = (dispatch) => dispatch(getProductList);
+const mapDispatchToProps = (dispatch) => dispatch(getProductList)
+  
+  // getProductById: () => dispatch(getProductListById)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);

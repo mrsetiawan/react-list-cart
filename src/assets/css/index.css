@@ -52,3 +52,7 @@
 .ant-card-grid {
   padding: 28px 5px 5px 5px !important;
 }
+
+.ant-list-item-meta-avatar {
+  width: 13% !important;
+}
