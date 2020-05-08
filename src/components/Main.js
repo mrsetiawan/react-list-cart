@@ -16,7 +16,6 @@ class Main extends Component {
 
   render() {
     const priceInCart = this.props.product.product.filter((num) => num.product_price >= 800);
-
     return (
       <div className="container">
         <Row gutter={{ xs: 15}}>
@@ -73,6 +72,12 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => dispatch(getProductList)
+
+
+// const mapDispatchToProps = (dispatch) => ({
+//   buatdonat: () => dispatch(donatAction),
+//   buatcake: () => dispatch(cakeAction)
+// });
   
   // getProductById: () => dispatch(getProductListById)
 
