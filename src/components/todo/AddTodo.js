@@ -12,7 +12,7 @@ import FilterTodos from './FilterTodos';
 const { Text } = Typography;
 
 // eslint-disable-next-line react/prefer-stateless-function
-const AddTodo = ({ dispatch }) => {
+const AddTodo = ({ addTodo }) => {
   let input = null;
 
   return (
@@ -35,7 +35,7 @@ const AddTodo = ({ dispatch }) => {
               if (!input.value.trim()) {
                 return;
               }
-              dispatch(addTodoAction(input.value));
+              addTodo(input.value)
               input.value = '';
             }}
           >
@@ -57,4 +57,8 @@ const AddTodo = ({ dispatch }) => {
   );
 };
 
-export default connect()(AddTodo);
+const mapDispatchToProps = (dispatch) => ({
+  addTodo: (val) => dispatch(addTodoAction(val))
+})
+
+export default connect(null,mapDispatchToProps)(AddTodo);
