@@ -1,9 +1,9 @@
 /* eslint-disable react/self-closing-comp */
 import React from 'react';
+import { connect } from 'react-redux';
 import {
   Row, Col, Typography, Button
 } from 'antd';
-import { connect } from 'react-redux';
 import Todos from './Todos';
 import { addTodoAction } from '../../config/actions/addTodoAction';
 import FilterTodos from './FilterTodos';
@@ -35,7 +35,7 @@ const AddTodo = ({ addTodo }) => {
               if (!input.value.trim()) {
                 return;
               }
-              addTodo(input.value)
+              addTodo(input.value);
               input.value = '';
             }}
           >
@@ -59,6 +59,6 @@ const AddTodo = ({ addTodo }) => {
 
 const mapDispatchToProps = (dispatch) => ({
   addTodo: (val) => dispatch(addTodoAction(val))
-})
+});
 
-export default connect(null,mapDispatchToProps)(AddTodo);
+export default connect(null, mapDispatchToProps)(AddTodo);

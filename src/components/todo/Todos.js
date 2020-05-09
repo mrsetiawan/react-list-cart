@@ -14,10 +14,16 @@ const Todos = ({ todos, toggleTodo }) => (
   />
 );
 
-const getTodoFilter = (todo, filter) => {
+const getTodoFilter = (todos, filter) => {
   switch (filter) {
     case 'ALL':
-      return todo;
+      return todos;
+      break;
+    case 'COMPLETED':
+      return todos.filter((todo) => todo.complete);
+      break;
+    case 'ACTIVE':
+      return todos.filter((todo) => !todo.complete);
       break;
     default:
       throw new Error(`Filter tidak ditemukan ${filter}`);
