@@ -18,9 +18,9 @@ class Main extends Component {
     const priceInCart = this.props.product.product.filter((num) => num.product_price >= 800);
     return (
       <div className="container">
-        <Row gutter={{ xs: 15}}>
+        <Row gutter={{ xs: 15 }}>
           <Col lg={14} sm={12} xs={24} className="left-content border-1px-gainsboro">
-            <Row> 
+            <Row>
               <CardProduct
                 data={this.props.product}
                 handleClickDetail={this.handleClickDetail}
@@ -78,7 +78,7 @@ const mapDispatchToProps = (dispatch) => dispatch(getProductList)
 //   buatdonat: () => dispatch(donatAction),
 //   buatcake: () => dispatch(cakeAction)
 // });
-  
-  // getProductById: () => dispatch(getProductListById)
+
+// getProductById: () => dispatch(getProductListById)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);
