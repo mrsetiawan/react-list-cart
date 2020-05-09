@@ -5,13 +5,11 @@ import Main from './components/Main';
 import AddTodos from './components/todo/AddTodo';
 import './App.css';
 
-const App = () => {
-  return (
-    <Switch>
-      <Route path="/" exact component={Main} />
-      <Route path="/todo" component={AddTodos} />
-    </Switch>
-  );
-}
+const App = () => (
+  <Switch>
+    <Route path="/" exact component={Main} />
+    <Route path="/todo" component={AddTodos} />
+  </Switch>
+);
 
 export default App;

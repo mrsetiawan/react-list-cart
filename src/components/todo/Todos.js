@@ -1,26 +1,25 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { List } from 'antd';
+import Todo from './Todo';
+import { toggleTodo } from '../../config/actions/toggleTodo';
 // eslint-disable-next-line react/prefer-stateless-function
-class Todos extends Component {
+const Todos = ({ todos, dispatch }) => (
+  // eslint-disable-next-line react/jsx-filename-extension
+  <List
+    size="large"
+    bordered
+    dataSource={todos}
+    renderItem={(todo) => <Todo key={todo.id} todo={todo} handleToggle={() => dispatch(toggleTodo(todo.id))} />}
+  />
+);
 
-  render() {
+const mapStateToProps = (state) => ({
+  todos: state.todos
+});
 
-    const data = ["belajar", "berhasil", "kaya raya"];
-    return (
-      // eslint-disable-next-line react/jsx-filename-extension
-      <List
-        size="large"
-        bordered
-        dataSource={data}
-        renderItem={item => <List.Item>{item}</List.Item>}
-      />
-    )
-  }
-}
+// const mapDispatchToProps = (dispatch) => ({
+//   handleToggle: (id) => dispatch(toggleTodo(id))
+// })
 
-const mapStateToProps = state => {
-  // console.log(state)
-}
-
-export default connect(mapStateToProps,null)(Todos)
+export default connect(mapStateToProps)(Todos);

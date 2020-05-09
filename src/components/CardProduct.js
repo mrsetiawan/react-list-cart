@@ -6,7 +6,6 @@ import { Card } from 'antd';
 import CardDesc from './CardDesc';
 
 const CardProduct = ({ data, handleClickDetail }) => {
-
   const imageStyle = {
     width: '100%',
     height: '200px',

@@ -11,7 +11,6 @@ const { Title } = Typography;
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Main extends Component {
-
   handleClickDetail = (id) => alert(id);
 
   render() {
@@ -71,7 +70,7 @@ const mapStateToProps = (state) => ({
   product: state.product
 });
 
-const mapDispatchToProps = (dispatch) => dispatch(getProductList)
+const mapDispatchToProps = (dispatch) => dispatch(getProductList);
 
 
 // const mapDispatchToProps = (dispatch) => ({
