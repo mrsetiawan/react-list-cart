@@ -10,21 +10,19 @@ const Todos = ({ todos, toggleTodo }) => (
     size="large"
     bordered
     dataSource={todos}
-    renderItem={(todo) =>
-      <Todo key={todo.id} todo={todo} handleToggle={() => toggleTodo(todo.id)} />
-    }
+    renderItem={(todo) => <Todo key={todo.id} todo={todo} handleToggle={() => toggleTodo(todo.id)} />}
   />
 );
 
 const getTodoFilter = (todo, filter) => {
   switch (filter) {
-    case "ALL":
-      return todo
+    case 'ALL':
+      return todo;
       break;
     default:
-      throw new Error(`Filter tidak ditemukan ${filter}`)
+      throw new Error(`Filter tidak ditemukan ${filter}`);
   }
-}
+};
 
 const mapStateToProps = (state) => ({
   todos: getTodoFilter(state.todos, state.filter)
@@ -32,6 +30,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   toggleTodo: (id) => dispatch(toggleTodo(id))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Todos);

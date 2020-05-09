@@ -1,13 +1,13 @@
-const initialState = "ALL";
+const initialState = 'ALL';
 
 const filterReducers = (state = initialState, action) => {
-  switch(action.type){
+  switch (action.type) {
     case 'SET_FILTER':
-      return action.filter
+      return action.filter;
       break;
     default:
       return state;
   }
-}
+};
 
 export default filterReducers;

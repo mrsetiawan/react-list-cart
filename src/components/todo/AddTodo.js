@@ -21,7 +21,9 @@ const AddTodo = ({ dispatch }) => {
       <Row>
         <Col span={12} offset={6} className="mt-15 mb-15">
           <Row justify="space-between">
-            <Text>My Todo</Text> &nbsp; <FilterTodos />
+            <Text>My Todo</Text>
+            {' '}
+            <FilterTodos />
           </Row>
         </Col>
       </Row>
