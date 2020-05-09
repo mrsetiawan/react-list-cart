@@ -6,7 +6,6 @@ const Todo = ({ todo, handleToggle }) => (
   <List.Item style={{ textDecoration: todo.complete ? 'line-through' : 'none', cursor: 'pointer' }} onClick={handleToggle}>
     {todo.id + 1}
     {' '}
-&nbsp;
     {todo.text}
   </List.Item>
 );

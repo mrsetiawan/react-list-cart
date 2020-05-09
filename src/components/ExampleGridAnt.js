@@ -3,6 +3,7 @@ import { Row, Col } from 'antd';
 
 function ExampleGridAnt() {
   return (
+    // eslint-disable-next-line react/jsx-filename-extension
     <div className="container">
       <Row>
         <Col span={24}>

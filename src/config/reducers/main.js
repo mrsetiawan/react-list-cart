@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import productListReducers from './productListReducers.js';
 import todoReducers from './todoReducer.js';
+import filterReducers from './filterTodos';
 
 const rootReducers = combineReducers({
   product: productListReducers,
-  todos: todoReducers
+  todos: todoReducers,
+  filter: filterReducers
 });
 
 export default rootReducers;

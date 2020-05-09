@@ -6,9 +6,10 @@ import {
 import { connect } from 'react-redux';
 import Todos from './Todos';
 import { addTodoAction } from '../../config/actions/addTodoAction';
+import FilterTodos from './FilterTodos';
 // eslint-disable-next-line react/prefer-stateless-function
 
-const { Title } = Typography;
+const { Text } = Typography;
 
 // eslint-disable-next-line react/prefer-stateless-function
 const AddTodo = ({ dispatch }) => {
@@ -17,9 +18,11 @@ const AddTodo = ({ dispatch }) => {
   return (
     // eslint-disable-next-line react/jsx-filename-extension
     <div className="container">
-      <Row justify="space-around" align="middle">
-        <Col span={12} style={{ textAlign: 'center' }}>
-          <Title>My Todo</Title>
+      <Row>
+        <Col span={12} offset={6} className="mt-15 mb-15">
+          <Row justify="space-between">
+            <Text>My Todo</Text> &nbsp; <FilterTodos />
+          </Row>
         </Col>
       </Row>
       <Row justify="center" align="middle">
