@@ -1,12 +1,10 @@
 /* eslint-disable react/self-closing-comp */
 import React from 'react';
-import { connect } from 'react-redux';
 import {
   Row, Col, Typography, Button
 } from 'antd';
-import Todos from './Todos';
-import { addTodoAction } from '../../config/actions/addTodoAction';
-import FilterTodos from './FilterTodos';
+import Todos from '../../containers/Todos';
+import FilterTodos from '../../containers/FilterTodo';
 // eslint-disable-next-line react/prefer-stateless-function
 
 const { Text } = Typography;
@@ -57,8 +55,4 @@ const AddTodo = ({ addTodo }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  addTodo: (val) => dispatch(addTodoAction(val))
-});
-
-export default connect(null, mapDispatchToProps)(AddTodo);
+export default AddTodo;

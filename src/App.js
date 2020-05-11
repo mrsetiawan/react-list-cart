@@ -2,7 +2,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Main from './components/Main';
-import AddTodos from './components/todo/AddTodo';
+import AddTodos from './containers/AddTodo';
 import './App.css';
 
 const App = () => (

@@ -1,7 +1,5 @@
 import React from 'react';
 import { Menu, Dropdown, Button } from 'antd';
-import { connect } from 'react-redux';
-import { setFilter } from '../../config/actions/setFilter';
 
 const FilterTodos = ({ filter }) => {
   const menu = (
@@ -32,8 +30,4 @@ const FilterTodos = ({ filter }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  filter: (val) => dispatch(setFilter(val))
-});
-
-export default connect(null, mapDispatchToProps)(FilterTodos);
+export default FilterTodos;
