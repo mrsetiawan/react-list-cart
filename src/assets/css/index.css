@@ -63,7 +63,7 @@
   width: 13% !important;
 }
 
-.ant-row .ant-col .ant-col-20 input {
+.ant-row .ant-col .ant-col-lg-20 input {
   width: 100%;
   border: 1px solid #c1c1c1;
   height: 100%;

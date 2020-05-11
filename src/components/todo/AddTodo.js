@@ -19,7 +19,7 @@ const AddTodo = ({ addTodo }) => {
     // eslint-disable-next-line react/jsx-filename-extension
     <div className="container">
       <Row>
-        <Col span={12} offset={6} className="mt-15 mb-15">
+        <Col lg={12} xs={24} offset={6} className="mt-15 mb-15">
           <Row justify="space-between">
             <Text>My Todo</Text>
             {' '}
@@ -28,7 +28,7 @@ const AddTodo = ({ addTodo }) => {
         </Col>
       </Row>
       <Row justify="center" align="middle">
-        <Col span={12}>
+        <Col lg={12} xs={24}>
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -40,10 +40,10 @@ const AddTodo = ({ addTodo }) => {
             }}
           >
             <Row>
-              <Col span={20}>
+              <Col lg={20} xs={16}>
                 <input ref={(node) => (input = node)} />
               </Col>
-              <Col span={4}>
+              <Col lg={4} xs={8}>
                 <Button type="primary" htmlType="submit" block>
                   Submit
                 </Button>
