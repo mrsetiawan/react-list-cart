@@ -5,7 +5,7 @@ import { Card } from 'antd';
 // import { getProductList } from '../config/actions/getProductList';
 import CardDesc from './CardDesc';
 
-const CardProduct = ({ data, handleClickDetail }) => {
+const CardProduct = ({ data }) => {
   const imageStyle = {
     width: '100%',
     height: '200px',
@@ -14,12 +14,12 @@ const CardProduct = ({ data, handleClickDetail }) => {
     objectFit: 'cover'
   };
 
-  const handleClick = (id) => handleClickDetail(id);
+  // const handleClick = (id) => handleClickDetail(id);
 
   return (
     <>
       {data.product.map((res) => (
-        <Card.Grid key={res.id} onClick={() => handleClick(res.id)}>
+        <Card.Grid key={res.id}>
           <img src={res.product_image} alt={res.product_name} style={imageStyle} />
           <br />
           <CardDesc description={res.product_name} price={res.product_price} />

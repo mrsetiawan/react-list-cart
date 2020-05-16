@@ -1,8 +1,14 @@
-// eslint-disable-next-line import/prefer-default-export
-export const getProductList = () => (dispatch) => {
-  setTimeout(() => {
-    dispatch({
-      type: 'GET_PRODUCT_LIST'
-    });
-  }, 3000);
+import axios from 'axios';
+
+export const getProductList = () => {
+  return dispatch => {
+    axios.get("http://localhost:4000/list")
+    .then((res) => {
+      dispatch({
+        type: "GET_DATA_LIST",
+        list:res.data
+      })
+    })
+    .catch((err) => console.log(err))
+  }
 };

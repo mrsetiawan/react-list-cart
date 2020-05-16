@@ -5,16 +5,18 @@ import { Row, Col, Typography } from 'antd';
 import CardProduct from './CardProduct';
 import ListCart from './ListCart';
 import { getProductList } from '../config/actions/getProductList';
-import { getProductListById } from '../config/actions/getProductListById';
 
 const { Title } = Typography;
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Main extends Component {
-  handleClickDetail = (id) => alert(id);
+
+  // componentDidMount(){
+  //   this.props.dispatch(getProductList())
+  // }
 
   render() {
-    const priceInCart = this.props.product.product.filter((num) => num.product_price >= 800);
+    console.log(this.props.product)
     return (
       <div className="container">
         <Row gutter={{ xs: 15 }}>
@@ -22,7 +24,6 @@ class Main extends Component {
             <Row>
               <CardProduct
                 data={this.props.product}
-                handleClickDetail={this.handleClickDetail}
               />
             </Row>
           </Col>
@@ -35,13 +36,13 @@ class Main extends Component {
                 />
               </Col>
               <Col span={24} className="mb-15">
-                <Row>
+                {/* <Row>
                   <Col span={24} className="card-list mb-5">
                     <ListCart
                       data={priceInCart}
                     />
                   </Col>
-                </Row>
+                </Row> */}
               </Col>
               <Col span={24} className="card-list bb-1">
                 <Title level={3} type="secondary" className="mb-0">Cart</Title>
@@ -68,16 +69,8 @@ class Main extends Component {
 
 const mapStateToProps = (state) => ({
   product: state.product
-});
+})
 
-const mapDispatchToProps = (dispatch) => dispatch(getProductList);
+const mapDispatcToProps = (dispatch) => dispatch(getProductList())
 
-
-// const mapDispatchToProps = (dispatch) => ({
-//   buatdonat: () => dispatch(donatAction),
-//   buatcake: () => dispatch(cakeAction)
-// });
-
-// getProductById: () => dispatch(getProductListById)
-
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps,mapDispatcToProps)(Main);
