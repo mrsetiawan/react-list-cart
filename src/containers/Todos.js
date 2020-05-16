@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { toggleTodo } from '../config/actions/toggleTodo';
+// import { toggleTodo } from '../config/actions/toggleTodo';
 import Todos from '../components/todo/Todos';
 // ini adalah contoh container component atau bisa disebut controller
 const getTodoFilter = (todos, filter) => {
@@ -22,8 +22,8 @@ const mapStateToProps = (state) => ({
   todos: getTodoFilter(state.todos, state.filter)
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  toggleTodo: (id) => dispatch(toggleTodo(id))
-});
+// const mapDispatchToProps = (dispatch) => ({
+//   toggleTodo: (id) => dispatch(toggleTodo(id))
+// });
 
 export default connect(mapStateToProps, null)(Todos);

@@ -5,14 +5,16 @@ export const fetchTodos = () => {
   return dispatch => {
     axios.get(" http://localhost:8080/todos")
       .then((res) => {
-        console.log(res)
-        dispatch(initData(res))
+        dispatch({
+          type: "INIT_DATA",
+          todos: res.data
+        })
       })
       .catch((err) => console.log(err));
   }
 }
 
-const initData = todos => ({
-  type: "INIT_DATA",
-  todos
-});
+// const initData = todos => ({
+//   type: "INIT_DATA",
+//   todos
+// });

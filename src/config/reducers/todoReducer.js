@@ -1,12 +1,9 @@
 const initialState = [];
 
 const todoReducer = (state = initialState, action) => {
-  switch (action.type) {
+  switch (action.type) { 
     case 'INIT_DATA':
-      return [
-        ...state,
-        action.todos
-      ]
+      return [...state,...action.todos]
       break;
     case 'ADD_TODO':
       return [

@@ -2,6 +2,9 @@
   .ant-card-grid {
     width: 100%;
   }
+  .ant-col .ant-col-offset-6 .mt-15 .mb-15 .ant-col-xs-24 .ant-col-lg-12 .ant-row .ant-row-space-between .ant-typography span {
+    
+  }
 }
 @media (min-width: 768px) {
   .container {
