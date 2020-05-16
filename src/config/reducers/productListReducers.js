@@ -14,12 +14,12 @@ const initialState = {
 };
 
 const productListReducers = (state = initialState, action) => {
-  switch(action.type){
-    case "GET_DATA_LIST":
-      return {...state.product,product: [...action.list]}
-      break
-    default :
-    return state
+  switch (action.type) {
+    case 'GET_DATA_LIST':
+      return { ...state.product, product: [...action.list] };
+      break;
+    default:
+      return state;
   }
 };
 
