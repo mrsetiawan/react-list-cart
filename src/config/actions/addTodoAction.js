@@ -2,9 +2,7 @@
 let id = 0;
 
 export const addTodoAction = (text) => ({
-  type: 'ADD_TODO',
-  payload: {
+    type: 'ADD_TODO',
     text,
     id: id++
-  }
 });

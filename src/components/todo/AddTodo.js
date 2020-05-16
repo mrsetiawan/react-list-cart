@@ -3,8 +3,8 @@ import React from 'react';
 import {
   Row, Col, Typography, Button
 } from 'antd';
-import Todos from '../../containers/Todos';
-import FilterTodos from '../../containers/FilterTodo';
+import Todos from './Todos';
+import FilterTodos from './FilterTodos';
 // eslint-disable-next-line react/prefer-stateless-function
 
 const { Text } = Typography;

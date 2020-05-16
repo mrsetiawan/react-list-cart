@@ -4,12 +4,13 @@ import { connect } from 'react-redux';
 import { List } from 'antd';
 import Todo from './Todo';
 import { fetchTodos } from '../../config/actions/fetchTodos';
-import { toggleTodo } from '../../config/actions/toggleTodo';
+import { toggleTodo } from '../../config/actions/toggleTodo'
 // ini adalah contoh presentational component atau bisa disebut sebuah view
 class Todos extends Component {
-  componentDidMount() {
-    this.props.dispatch(fetchTodos());
-  }
+
+  // componentDidMount(){
+  //   this.props.dispatch(fetchTodos())
+  // }
 
   render() {
     const { todos, toggleTodo } = this.props;
@@ -21,8 +22,9 @@ class Todos extends Component {
         dataSource={todos}
         renderItem={(todo) => <Todo key={todo.id} todo={todo} handleToggle={() => toggleTodo(todo.id)} />}
       />
-    );
+    )
   }
+
 }
 
 const getTodoFilter = (todos, filter) => {
@@ -42,11 +44,11 @@ const getTodoFilter = (todos, filter) => {
 };
 
 const mapStateToProps = (state) => ({
-  todos: getTodoFilter(state.todos.data, state.filter)
+  todos: getTodoFilter(state.todos, state.filter)
 });
 
 const mapDispatchToProps = (dispatch) => ({
   toggleTodo: (val) => dispatch(toggleTodo(val))
-});
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Todos);
+export default connect(mapStateToProps,mapDispatchToProps)(Todos);

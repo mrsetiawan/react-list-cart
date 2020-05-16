@@ -3,17 +3,17 @@
     {
       "id": 1,
       "text": "belajar",
-      "completed": false
+      "complete": false
     },
     {
       "id": 2,
       "text": "menjadi ahli",
-      "completed": false
+      "complete": false
     },
     {
       "id": 3,
       "text": "sukses dan kaya raya",
-      "completed": false
+      "complete": false
     }
   ]
 }

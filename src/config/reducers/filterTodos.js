@@ -5,7 +5,6 @@ const filterReducers = (state = initialState, action) => {
     case 'SET_FILTER':
       const newState = action.filter;
       return newState;
-      break;
     default:
       return state;
   }

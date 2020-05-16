@@ -1,22 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { setFilter } from '../../config/actions/setFilter'
 import { Menu, Dropdown, Button } from 'antd';
 
-const FilterTodos = ({ filter }) => {
+const FilterTodos = ({ filterTodo }) => {
   const menu = (
     // eslint-disable-next-line react/jsx-filename-extension
     <>
       <Menu>
-        <Menu.Item onClick={() => filter('ALL')}>
+        <Menu.Item onClick={() => filterTodo('ALL')}>
           All
         </Menu.Item>
       </Menu>
       <Menu>
-        <Menu.Item onClick={() => filter('COMPLETED')}>
+        <Menu.Item onClick={() => filterTodo('COMPLETED')}>
           Complete
         </Menu.Item>
       </Menu>
       <Menu>
-        <Menu.Item onClick={() => filter('ACTIVE')}>
+        <Menu.Item onClick={() => filterTodo('ACTIVE')}>
           Active
         </Menu.Item>
       </Menu>
@@ -30,4 +32,8 @@ const FilterTodos = ({ filter }) => {
   );
 };
 
-export default FilterTodos;
+const mapDispatchToProps = (dispatch) => ({
+  filterTodo: (val) => dispatch(setFilter(val))
+});
+
+export default connect(null, mapDispatchToProps)(FilterTodos);
