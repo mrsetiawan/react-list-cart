@@ -6,10 +6,12 @@ import AddTodos from './containers/AddTodo';
 import './App.css';
 
 const App = () => (
-  <Switch>
-    <Route path="/" exact component={Main} />
-    <Route path="/todo" component={AddTodos} />
-  </Switch>
+  <>
+    <Switch>
+      <Route path="/" exact component={Main} />
+      <Route path="/todo" component={AddTodos} />
+    </Switch>
+  </>
 );
 
 export default App;

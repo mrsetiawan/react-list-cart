@@ -10,7 +10,6 @@ const { Title } = Typography;
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Main extends Component {
-
   // componentDidMount(){
   //   this.props.dispatch(getProductList())
   // }
@@ -68,8 +67,8 @@ class Main extends Component {
 
 const mapStateToProps = (state) => ({
   product: state.product
-})
+});
 
 // const mapDispatcToProps = (dispatch) => dispatch(getProductList())
 
-export default connect(mapStateToProps,null)(Main);
+export default connect(mapStateToProps, null)(Main);

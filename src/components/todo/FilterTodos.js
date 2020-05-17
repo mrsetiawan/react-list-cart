@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setFilter } from '../../config/actions/setFilter'
 import { Menu, Dropdown, Button } from 'antd';
+import { setFilter } from '../../config/actions/setFilter';
 
 const FilterTodos = ({ filterTodo }) => {
   const menu = (

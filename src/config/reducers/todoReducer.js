@@ -1,19 +1,38 @@
-const initialState = [];
+const initialState = {
+  data: [],
+  loading: false,
+  error: null
+};
 
 const todoReducer = (state = initialState, action) => {
-  switch (action.type) { 
+  switch (action.type) {
     case 'INIT_DATA':
-      return [...state,...action.todos]
-      break;
-    case 'ADD_TODO':
-      return [
+      return {
+        data: [...state.data, ...action.payload.todos],
+        loading: false
+      };
+    case 'INIT_DATA_STARTED':
+      return {
         ...state,
-        { id: action.id, text: action.text, complete: false }
-      ];
-      break;
+        loading: !state.loading
+      };
+    case 'ADD_TODO':
+      return {
+        ...state,
+        data: [...state.data,
+          {
+            id: action.payload.id,
+            text: action.payload.text,
+            complete: false
+          }
+        ]
+      };
     case 'TOGGLE_TODO':
-      return state.map((todo) => ((todo.id === action.id) ? { ...todo, complete: !todo.complete } : todo));
-      break;
+      return {
+        ...state,
+        data: state.data.map((todo) => (
+          (todo.id === action.payload.id) ? { ...todo, complete: !todo.complete } : todo))
+      };
     default:
       return state;
   }
