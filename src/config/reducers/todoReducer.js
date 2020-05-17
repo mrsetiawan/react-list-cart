@@ -8,8 +8,8 @@ const todoReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'INIT_DATA':
       return {
-        data: [...state.data, ...action.payload.todos],
-        loading: false
+        loading: false,
+        data: [...state.data, ...action.payload.todos]
       };
     case 'INIT_DATA_STARTED':
       return {

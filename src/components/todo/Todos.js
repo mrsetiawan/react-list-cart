@@ -7,22 +7,23 @@ import { fetchTodos } from '../../config/actions/fetchTodos';
 import { toggleTodo } from '../../config/actions/toggleTodo';
 // ini adalah contoh presentational component atau bisa disebut sebuah view
 class Todos extends Component {
+
   componentDidMount() {
     this.props.dispatch(fetchTodos());
   }
 
   render() {
-    const { todos, loading } = this.props;
+    const { todos } = this.props;
 
     return (
       // eslint-disable-next-line react/jsx-filename-extension
       <List
         size="large"
         bordered
-        dataSource={loading ? <div>loading...</div> : todos}
+        dataSource={todos}
         renderItem={(todo) => <Todo key={todo.id} todo={todo} handleToggle={() => this.props.dispatch(toggleTodo(todo.id))} />}
       />
-    );
+    )
   }
 }
 
@@ -39,12 +40,10 @@ const getTodoFilter = (todos, filter) => {
   }
 };
 
-const mapStateToProps = (state) => ({
-  todos: getTodoFilter(state.todos.data, state.filter)
-});
-
-// const mapDispatchToProps = (dispatch) => ({
-//   toggleTodo: (val) => dispatch(toggleTodo(val))
-// })
+const mapStateToProps = (state) => {
+  return {
+    todos: getTodoFilter(state.todos.data, state.filter),
+  }
+};
 
 export default connect(mapStateToProps, null)(Todos);
