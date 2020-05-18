@@ -13,7 +13,11 @@ class Todos extends Component {
   }
 
   render() {
-    const { todos } = this.props;
+    const { todos,loading,error } = this.props;
+
+    if(loading) return <div style={{padding: '3rem',textAlign: 'center'}}>loading...</div>
+
+    if(error) return <div style={{padding: '3rem',textAlign: 'center'}}>API error...</div>
 
     return (
       // eslint-disable-next-line react/jsx-filename-extension
@@ -43,6 +47,8 @@ const getTodoFilter = (todos, filter) => {
 const mapStateToProps = (state) => {
   return {
     todos: getTodoFilter(state.todos.data, state.filter),
+    loading: state.todos.loading,
+    error: state.todos.error
   }
 };
 

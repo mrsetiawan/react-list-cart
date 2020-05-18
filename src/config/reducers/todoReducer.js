@@ -16,6 +16,12 @@ const todoReducer = (state = initialState, action) => {
         ...state,
         loading: !state.loading
       };
+    case 'INIT_DATA_ERROR_RESPONSE':
+      return {
+        ...state,
+        loading: false,
+        error: true
+      }
     case 'ADD_TODO':
       return {
         ...state,
