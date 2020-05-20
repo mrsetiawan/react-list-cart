@@ -20,7 +20,3 @@ export const fetchTodos = () => {
   }
  
 };
-
-// const initDataStarted = () => ({
-//   type: 'INIT_DATA_STARTED'
-// });
