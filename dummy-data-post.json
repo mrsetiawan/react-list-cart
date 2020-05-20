@@ -1,0 +1,12 @@
+{
+  "add-todo": [
+    {
+      "id": 1,
+      "text": "belajar",
+      "complete": false
+    },
+    {
+      "id": 2
+    }
+  ]
+}

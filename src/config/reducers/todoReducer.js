@@ -31,7 +31,8 @@ const todoReducer = (state = initialState, action) => {
             text: action.payload.text,
             complete: false
           }
-        ]
+        ],
+        loading:false
       };
     case 'TOGGLE_TODO':
       return {
